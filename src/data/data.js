@@ -1,4 +1,4 @@
-const data = [
+export const data = [
     {
         id: 1,
         userName: 'Jason Veum',
@@ -20,13 +20,13 @@ const data = [
         importance: 'medium',
         date: 'Apr 16 2022 16:00:00 PM',
         email_subject: 'Your booking has been confirmed!',
-        email_body1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        email_body1: 'Good news! Your next booking has been confirmed by the host! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         email_body2: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
         email_body3: 'dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         email_signature: 'Kind Regards, AirBnB Team'
     },
     {
-        id: 1,
+        id: 3,
         userName: 'Molly Smith',
         email: 'molly-smith@email.com',
         email_type: 'Personal',

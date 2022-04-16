@@ -1,0 +1,9 @@
+.emails-wrapper {
+    border: 1px solid teal;
+
+    &__date {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
