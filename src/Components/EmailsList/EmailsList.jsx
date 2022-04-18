@@ -7,8 +7,8 @@ const EmailsList = () => {
 
     const emailsList = data.map(email => {
         return (
-            <Link to={`/${email.id}`}>
-                <div className='emails-wrapper' key={email.id}>
+            <Link to={`/${email.id}`} key={email.id}>
+                <div className='emails-wrapper'>
                     <div className='emails-wrapper__date'>
                         <h4>{email.userName}</h4>
                         <h4>{email.date}</h4>
