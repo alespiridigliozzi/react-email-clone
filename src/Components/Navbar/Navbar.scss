@@ -1,5 +1,11 @@
+@use '../../Styles/variables' as *;
+
 .navbar {
     grid-column: 1 / -1;
-    border: 1px solid salmon;
+    border: 1px solid $border-color;
     height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
 }

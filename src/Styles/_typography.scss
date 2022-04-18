@@ -1,5 +1,9 @@
 @use './variables' as *;
 
+a {
+    text-decoration: none;
+}
+
 h1 {
     font-size: 2rem;
     font-weight: 700;
@@ -32,6 +36,7 @@ p {
     font-size: 1rem;
     font-weight: 700;
     color: $primary-blue;
+    padding: 0.625rem 0;
 }
 
 .small-paragraph {

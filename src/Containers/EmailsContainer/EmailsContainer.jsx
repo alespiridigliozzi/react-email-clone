@@ -1,15 +1,20 @@
 import React from 'react'
 import EmailsList from '../../Components/EmailsList/EmailsList'
 import EmailBody from '../../Components/EmailBody/EmailBody'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import './EmailsContainer.scss'
 
 const EmailsContainer = () => {
 
     return (
-        <div className='emails-container'>
-            <EmailsList />
-            <EmailBody />
-        </div>
+        <Router>
+            <div className='emails-container'>
+                <Routes>
+                    <Route path='/' element={<EmailsList />} />
+                    <Route path='/:id' element={<EmailBody />} />
+                </Routes>
+            </div>
+        </Router>
     )
 }
 
