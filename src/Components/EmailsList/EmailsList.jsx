@@ -9,9 +9,9 @@ const EmailsList = () => {
             <div className='emails-wrapper' key={email.id}>
                 <div className='emails-wrapper__date'>
                     <h4>{email.userName}</h4>
-                    <p>{email.date}</p>
+                    <h4>{email.date}</h4>
                 </div>
-                <h2>{email.email_subject}</h2>
+                <h3 className='bold-h3'>{email.email_subject}</h3>
                 <p>{email.email_body1.substring(0, 75)}...</p>
             </div>
         )

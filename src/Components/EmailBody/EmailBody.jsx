@@ -1,8 +1,9 @@
 import React from 'react'
+import './EmailBody.scss'
 
 const EmailBody = () => {
   return (
-    <div>EmailBody</div>
+    <div className='email-body'>EmailBody</div>
   )
 }
 

@@ -1,0 +1,41 @@
+@use './variables' as *;
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+h4 {
+    font-size: .8rem;
+    font-weight: 400;
+    color: $primary-grey;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 160%;
+    color: $primary-grey;
+}
+
+.bold-h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: $primary-blue;
+}
+
+.small-paragraph {
+    font-size: .8rem;
+    font-weight: 400;
+    letter-spacing: 160%;
+}

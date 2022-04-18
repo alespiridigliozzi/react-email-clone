@@ -1,10 +1,14 @@
+@use "./Styles/typography" as *;
+@use './Styles/variables' as *;
+
 .App {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    font-family: 'Inter', sans-serif;
 }
 
 .main-container {
     border: 1px solid blue;
     display: flex;
-    width: 100%;
+    width: 100vw;
 }
