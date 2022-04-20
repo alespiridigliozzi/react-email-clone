@@ -1,22 +1,14 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
 import './EmailBody.scss'
-import { data } from '../../data/data'
 
-const EmailBody = () => {
+const EmailBody = (props) => {
 
-    const { id } = useParams()
-
-    const emailDetails = data.filter(email => email.id == id)
-
-    const emailBody = emailDetails[0]
+    const { id, userName } = props
 
     return (
         <div className='email-body'>
-            <h3>{emailBody.date}</h3>
-            <h2>{emailBody.userName}</h2>
-            <h1>{emailBody.email_subject}</h1>
-         </div>
+            <h2>{userName}</h2>
+        </div>
     )
 }
 
