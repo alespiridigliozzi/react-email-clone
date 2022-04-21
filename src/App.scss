@@ -2,8 +2,6 @@
 @use './Styles/variables' as *;
 
 .App {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
     font-family: 'Inter', sans-serif;
     width: 100%;
 }
