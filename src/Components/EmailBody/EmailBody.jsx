@@ -1,13 +1,14 @@
 import React from 'react'
 import './EmailBody.scss'
 
-const EmailBody = (props) => {
-
-    const { id, userName } = props
+const EmailBody = ({emailData}) => {
 
     return (
         <div className='email-body'>
-            <h2>{userName}</h2>
+            <h2>{emailData.userName}</h2>
+            <p>{emailData.date}</p>
+            <h3>{emailData.emailSubject}</h3>
+            <p>{emailData.emailBody1}</p>
         </div>
     )
 }
