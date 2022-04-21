@@ -7,10 +7,10 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <div className='main-container'>
+      <main className='main-container'>
         <Sidebar />
         <EmailsContainer />
-      </div>
+      </main>
     </div>
   );
 }

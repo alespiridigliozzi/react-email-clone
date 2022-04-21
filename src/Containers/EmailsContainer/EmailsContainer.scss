@@ -1,6 +1,4 @@
 .emails-container {
     border: 1px solid green;
-    width: 85%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
 }

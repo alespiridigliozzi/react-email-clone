@@ -3,7 +3,19 @@ import './EmailsList.scss'
 
 const EmailsList = (props) => {
 
-    const { userName, date, emailSubject, emailBody1, setEmailData } = props
+    const { id, 
+        username, 
+        date, 
+        email, 
+        emailSubject, 
+        emailType, 
+        importance, 
+        emailBody1, 
+        emailBody2, 
+        emailBody3, 
+        emailSignature, 
+        setEmailData 
+    } = props
 
     const passEmailData = () => {
         setEmailData(props)
@@ -12,7 +24,7 @@ const EmailsList = (props) => {
     return (
         <div className='emails-wrapper' onClick={passEmailData}>
             <div className='emails-wrapper__date'>
-                <h4>{userName}</h4>
+                <h4>{username}</h4>
                 <h4>{date}</h4>
             </div>
         <h3 className='bold-h3'>{emailSubject}</h3>

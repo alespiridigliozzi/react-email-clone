@@ -14,10 +14,16 @@ const EmailsContainer = () => {
             <EmailsList 
             key={email.id} 
             id={email.id} 
-            userName={email.userName} 
+            username={email.userName} 
+            email={email.email}
             date={email.date} 
+            emailType={email.email_type}
             emailSubject={email.email_subject}  
             emailBody1={email.email_body1}
+            emailBody2={email.email_body2}
+            emailBody3={email.email_body3}
+            emailSignature={email.email_signature}
+            importance={email.importance}
             setEmailData={setEmailData}
             />
         )
@@ -25,8 +31,10 @@ const EmailsContainer = () => {
 
     return (
         <div className='emails-container'>
-            <EmailFilters />
-            {emailsList}
+            <div className="emails-container__left">
+                <EmailFilters />
+                {emailsList}
+            </div>
             <EmailBody emailData={emailData}/> 
         </div>
     )
