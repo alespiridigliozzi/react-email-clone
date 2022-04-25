@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import EmailsList from '../../Components/EmailsList/EmailsList'
 import EmailBody from '../../Components/EmailBody/EmailBody'
 import './EmailsContainer.scss'
@@ -7,8 +7,13 @@ import { data } from '../../data/data'
 
 const EmailsContainer = () => {
 
-    const [emailData, setEmailData] = useState("")
+    const [emailData, setEmailData] = useState()
+    const [highImportance, setHighImportance] = useState(false)
 
+    const filterByHigh = () => {
+        setHighImportance(!highImportance)
+    }
+    
     const emailsList = data.map(email => {
         return (
             <EmailsList 
@@ -29,13 +34,21 @@ const EmailsContainer = () => {
         )
     })
 
+    const filteredEmails = data.map(res => {
+        if(highImportance) {
+            filteredEmails = res.email_type == 'high'
+        }
+    })
+
+
     return (
         <div className='emails-container'>
             <div className="emails-container__left">
-                <EmailFilters />
+                <EmailFilters filterByHigh={filterByHigh}/>
                 {emailsList}
             </div>
-            <EmailBody emailData={emailData}/> 
+
+            {emailData && <EmailBody emailData={emailData} /> }
         </div>
     )
 }

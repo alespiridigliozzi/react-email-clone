@@ -3,7 +3,8 @@ import './EmailsList.scss'
 
 const EmailsList = (props) => {
 
-    const { id, 
+    const { 
+        id, 
         username, 
         date, 
         email, 
