@@ -5,14 +5,18 @@ const EmailBody = ({emailData}) => {
 
     return (
         <div className='email-body'>
-            <h2>{emailData.username}</h2>
-            <p>{emailData.date}</p>
-            <h2>{emailData.email}</h2>
-            <h3>{emailData.emailSubject}</h3>
-            <p>{emailData.emailBody1}</p><br/>
-            <p>{emailData.emailBody2}</p><br/>
-            <p>{emailData.emailBody3}</p>
-            <h1>{emailData.emailSignature}</h1>
+            <div className="email-body__header">
+                <h2>{emailData.username}</h2>
+                <h4>{emailData.email}</h4>
+            </div>
+            
+            <div className="email-body__message">
+                <h1>{emailData.emailSubject}</h1><br/>
+                <p>{emailData.emailBody1}</p><br/>
+                <p>{emailData.emailBody2}</p><br/>
+                <p>{emailData.emailBody3}</p><br/>
+                <p>{emailData.emailSignature}</p>
+            </div>
         </div>
     )
 }

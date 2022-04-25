@@ -7,9 +7,23 @@
     padding: 1rem;
     background-color: $secondary-green;
 
+    &:hover {
+        cursor: pointer;
+    }
+
     &__date {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
+}
+
+.read {
+    background-color: white;
+    border-right: none;
+}
+
+.read-text {
+    font-weight: 300;
+    padding: 0.6rem 0;
 }

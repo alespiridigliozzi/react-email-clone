@@ -5,6 +5,19 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
+
+    &__compose {
+        background-color: $primary-green;
+        color: #ffffff;
+        font-weight: bold;
+        border: none;
+        padding: .8rem 1rem;
+        border-radius: 5px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
 
 .filters-container {
@@ -12,18 +25,20 @@
 
     &__trigger {
         background-color: #ffffff;
-        border: 1px solid grey;
-        padding: .5rem;
+        border: 1px solid $border-color;
+        color: $primary-blue;
+        padding: .5rem .8rem;
+        border-radius: 5px;
     }
 }
 
 .filters {
     background: #ffffff;
-    border-radius: 8px;
+    border-radius: 5px;
     position: absolute;
     right: 0;
     padding: 1rem;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 8px rgba(48, 48, 48, 0.3);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-20px);

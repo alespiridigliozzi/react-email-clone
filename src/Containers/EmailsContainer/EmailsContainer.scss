@@ -1,4 +1,6 @@
+@use '../../Styles/variables' as *;
+
 .emails-container {
-    border: 1px solid green;
+    border: 1px solid $border-color;
     display: flex;
 }

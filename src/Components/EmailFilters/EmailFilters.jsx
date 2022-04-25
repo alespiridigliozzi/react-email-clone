@@ -9,7 +9,7 @@ const EmailFilters = ({filterByHigh}) => {
 
     return (
         <div className='email-filters'>
-            <button>New Email</button>
+            <button className='email-filters__compose'>Compose +</button>
             <div className="filters-container">
                 <button onClick={toggleFilters} className="filters-container__trigger">
                     <span>Filter By</span>
