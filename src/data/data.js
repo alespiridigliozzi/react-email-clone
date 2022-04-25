@@ -42,7 +42,7 @@ export const data = [
         id: 4,
         userName: 'Spotify',
         email: 'music@spotify.com',
-        email_type: 'Personal',
+        email_type: 'work',
         importance: 'low',
         date: 'Jun 09 2021 11:00:00 AM',
         email_subject: 'Uh-oh! Your subscription is expiring',
