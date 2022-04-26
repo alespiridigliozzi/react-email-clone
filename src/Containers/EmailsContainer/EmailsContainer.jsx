@@ -7,12 +7,8 @@ import { data } from '../../data/data'
 
 const EmailsContainer = () => {
 
-    const [emailData, setEmailData] = useState()
-    const [highImportance, setHighImportance] = useState(false)
-
-    const filterByHigh = () => {
-        setHighImportance(!highImportance)
-    }
+    const [emails, setEmails] = useState([])
+    const [emailData, setEmailData] = useState([])
     
     const emailsList = data.map(email => {
         return (
@@ -34,18 +30,36 @@ const EmailsContainer = () => {
         )
     })
 
-    const filteredEmails = data.map(res => {
-        if(highImportance) {
-            filteredEmails = res.email_type == 'high'
-        }
-    })
+    useEffect(() => {
+        setEmails(emailsList)
+        setEmailData(emailsList[0].props)
+    }, [])
+
+
+    const filterByHigh = () => {
+        const filteredEmails = emailsList.filter(email => {
+            let checkedEmail = true;
+            checkedEmail = email.props.emailType == 'personal'
+            return checkedEmail;
+        }) 
+        setEmails(filteredEmails)
+    }
+
+    const filterByPersonal = () => {
+        const persEm = emailsList.filter(email => {
+            let personalEm = true;
+            personalEm = email.props.importance == 'low'
+            return personalEm
+        })
+        setEmails(persEm)
+    }
 
 
     return (
         <div className='emails-container'>
             <div className="emails-container__left">
-                <EmailFilters filterByHigh={filterByHigh}/>
-                {emailsList}
+                <EmailFilters filterByHigh={filterByHigh} filterByPersonal={filterByPersonal}/>
+                {emails.length > 0 && emails}
             </div>
 
             {emailData && <EmailBody emailData={emailData} /> }

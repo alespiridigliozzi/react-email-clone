@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react'
 import './EmailFilters.scss'
 
-const EmailFilters = ({filterByHigh}) => {
+const EmailFilters = ({filterByHigh, filterByPersonal}) => {
 
     const dropdownRef = useRef(null);
     const [isActive, setIsActive] = useState(false);
@@ -21,7 +21,7 @@ const EmailFilters = ({filterByHigh}) => {
                     <input type="radio" id='medium' name='importance' value='medium' />
                     <label htmlFor="medium">Medium</label><br />
                     <input type="radio" id='low' name='importance' value='low' />
-                    <label htmlFor="low">Low</label><br/>
+                    <label onClick={filterByPersonal} htmlFor="low">Low</label><br/>
 
                     <h3 className='bold-h3'>Date</h3>
                     <input type="radio" id='newest' name='date' value='newest' />
