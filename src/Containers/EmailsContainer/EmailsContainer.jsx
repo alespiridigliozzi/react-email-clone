@@ -90,7 +90,6 @@ const EmailsContainer = () => {
         if(typeWork) {
             results = email.props.emailType == 'work'
         }
-
         return results;
     })
 

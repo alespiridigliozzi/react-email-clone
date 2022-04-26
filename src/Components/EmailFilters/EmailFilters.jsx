@@ -1,5 +1,7 @@
 import React, {useRef, useState} from 'react'
 import './EmailFilters.scss'
+import { BsSliders } from "react-icons/bs";
+import { BiPlusCircle } from 'react-icons/bi'
 
 const EmailFilters = (props) => {
 
@@ -20,10 +22,11 @@ const EmailFilters = (props) => {
 
     return (
         <div className='email-filters'>
-            <button className='email-filters__compose'>Compose +</button>
+            <button className='email-filters__compose'>Compose <BiPlusCircle /></button>
+
             <div className="filters-container">
                 <button onClick={toggleFilters} className="filters-container__trigger">
-                    <span>Filter By</span>
+                    <span>Filter By</span> <BsSliders />
                 </button>
                 <div ref={dropdownRef} className={`filters ${isActive ? 'active' : 'inactive'}`}>
                     <h3 className='bold-h3'>Importance</h3>
@@ -46,8 +49,10 @@ const EmailFilters = (props) => {
                     <input onClick={filterByWork} type="checkbox" id='work' name='type' value='work' />
                     <label htmlFor="work">Work</label><br />
 
-                    <button onClick={resetFilters}>Reset</button>
-                    <button onClick={() => setIsActive(false)}>Done</button>
+                    <div className="filters__buttons">
+                        <button onClick={resetFilters}>Reset</button>
+                        <button onClick={() => setIsActive(false)}>Done</button>
+                    </div>
                 </div>
             </div>
         </div>

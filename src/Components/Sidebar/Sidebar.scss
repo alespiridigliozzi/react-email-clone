@@ -9,12 +9,28 @@
         grid-template-columns: 1fr;
         justify-items: center;
 
-        a {
+        button {
             font-size: 1rem;
             color: $primary-blue;
             padding: 1rem;
             background-color: $secondary-green;
-            border-radius: 30%;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+
+            span {
+                display: flex;
+                align-items: center;
+                gap: 5px
+            }
+        }
+
+        .email-count {
+            color: $primary-green;
+            font-weight: bold;
         }
     }
 }
