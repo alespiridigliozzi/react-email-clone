@@ -9,6 +9,13 @@ const EmailsContainer = () => {
 
     const [emails, setEmails] = useState([])
     const [emailData, setEmailData] = useState([])
+    const [highImportance, setHighImportance] = useState(false)
+    const [mediumImportance, setMediumImportance] = useState(false)
+    const [lowImportance, setLowImportance] = useState(false)
+    const [newest, setNewest] = useState(false)
+    const [oldest, setOldest] = useState(false)
+    const [typePersonal, setTypePersonal] = useState(false)
+    const [typeWork, setTypeWork] = useState(false)
     
     const emailsList = data.map(email => {
         return (
@@ -30,6 +37,7 @@ const EmailsContainer = () => {
         )
     })
 
+
     useEffect(() => {
         setEmails(emailsList)
         setEmailData(emailsList[0].props)
@@ -37,29 +45,82 @@ const EmailsContainer = () => {
 
 
     const filterByHigh = () => {
-        const filteredEmails = emailsList.filter(email => {
-            let checkedEmail = true;
-            checkedEmail = email.props.emailType == 'personal'
-            return checkedEmail;
-        }) 
-        setEmails(filteredEmails)
+        setHighImportance(!highImportance)
+    }
+
+    const filterByMedium = () => {
+        setMediumImportance(!mediumImportance)
+    }
+
+    const filterByLow = () => {
+        setLowImportance(!lowImportance)
+    }
+
+    const filterNewest = () => {
+        setNewest(!newest)
+    }
+
+    const filterOldest = () => {
+        setOldest(!oldest)
     }
 
     const filterByPersonal = () => {
-        const persEm = emailsList.filter(email => {
-            let personalEm = true;
-            personalEm = email.props.importance == 'low'
-            return personalEm
-        })
-        setEmails(persEm)
+        setTypePersonal(!typePersonal)
+    }
+
+    const filterByWork = () => {
+        setTypeWork(!typeWork)
+    }
+
+    const emailsResults = emailsList.filter(email => {
+        let results = true;
+
+        if(highImportance) {
+            results = email.props.importance == 'high'
+        }
+        if(mediumImportance) {
+            results = email.props.importance == 'medium'
+        }
+        if(lowImportance) {
+            results = email.props.importance == 'low'
+        }
+        if(typePersonal) {
+            results = email.props.emailType == 'personal'
+        }
+        if(typeWork) {
+            results = email.props.emailType == 'work'
+        }
+
+        return results;
+    })
+
+    const resetFilters = () => {
+        setHighImportance(false)
+        setMediumImportance(false)
+        setLowImportance(false)
+        setNewest(false)
+        setOldest(false)
+        setTypePersonal(false)
+        setTypeWork(false)
     }
 
 
     return (
         <div className='emails-container'>
             <div className="emails-container__left">
-                <EmailFilters filterByHigh={filterByHigh} filterByPersonal={filterByPersonal}/>
-                {emails.length > 0 && emails}
+
+                <EmailFilters 
+                    resetFilters={resetFilters} 
+                    filterByHigh={filterByHigh} 
+                    filterByMedium={filterByMedium}
+                    filterByLow={filterByLow}
+                    filterNewest={filterNewest}
+                    filterOldest={filterOldest}
+                    filterByPersonal={filterByPersonal}
+                    filterByWork={filterByWork}
+                />
+
+                {emails.length > 0 && emailsResults}
             </div>
 
             {emailData && <EmailBody emailData={emailData} /> }
