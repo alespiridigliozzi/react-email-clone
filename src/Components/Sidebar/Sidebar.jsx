@@ -1,14 +1,15 @@
 import React from 'react'
 import './Sidebar.scss'
-import { data } from '../../data/data'
+import { HiOutlineMail } from 'react-icons/hi'
+import { HiOutlineTrash } from 'react-icons/hi'
 
-const Sidebar = () => {
+const Sidebar = ({emailCount}) => {
 
   return (
     <div className='sidebar'>
         <div className="sidebar__menu">
-            <a href='#'>Inbox {data.length} </a>
-            <a href='#'>Trash</a>
+            <button><span><HiOutlineMail/>Inbox</span> <span className='email-count'>{emailCount}</span></button><br/>
+            <button><span><HiOutlineTrash/>Trash</span> <span className='email-count'>0</span></button>
         </div>
     </div>
   )
