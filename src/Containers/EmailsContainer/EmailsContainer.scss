@@ -3,4 +3,15 @@
 .emails-container {
     border: 1px solid $border-color;
     display: flex;
+    max-height: 93vh;
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__results {
+        overflow-y: scroll;
+        max-height: 82vh;
+    }
 }

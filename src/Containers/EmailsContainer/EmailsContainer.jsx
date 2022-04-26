@@ -106,8 +106,8 @@ const EmailsContainer = () => {
 
     return (
         <div className='emails-container'>
+            <div>
             <div className="emails-container__left">
-
                 <EmailFilters 
                     resetFilters={resetFilters} 
                     filterByHigh={filterByHigh} 
@@ -118,8 +118,11 @@ const EmailsContainer = () => {
                     filterByPersonal={filterByPersonal}
                     filterByWork={filterByWork}
                 />
+            </div>
 
-                {emails.length > 0 && emailsResults}
+            <div className="emails-container__results">
+                    {emails.length > 0 && emailsResults}
+            </div>
             </div>
 
             {emailData && <EmailBody emailData={emailData} /> }
