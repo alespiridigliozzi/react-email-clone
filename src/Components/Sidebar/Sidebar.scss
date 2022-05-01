@@ -3,6 +3,7 @@
 .sidebar {
     width: 25%;
     padding: 1rem;
+    grid-area: 1 / 1 / 2 / 2;
 
     &__menu {
         display: grid;

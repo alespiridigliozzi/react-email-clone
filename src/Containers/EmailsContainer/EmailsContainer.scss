@@ -4,6 +4,7 @@
     border: 1px solid $border-color;
     display: flex;
     max-height: 93vh;
+    grid-area: 1 / 2 / 2 / 5;
 
     &__left {
         display: flex;
@@ -15,3 +16,7 @@
         max-height: 82vh;
     }
 }
+
+.emails-container__email-body {
+    grid-area: 1 / 5 / 2 / 9;
+ }
