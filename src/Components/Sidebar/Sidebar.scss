@@ -10,7 +10,7 @@
         grid-template-columns: 1fr;
         justify-items: center;
 
-        button {
+        &__btn {
             font-size: 1rem;
             color: $primary-blue;
             padding: 1rem;
@@ -22,6 +22,24 @@
             align-items: center;
             gap: 4rem;
 
+            &--trash {
+                font-size: 1rem;
+                color: $primary-grey;
+                padding: 1rem;
+                border-radius: 5px;
+                border: none;
+                outline: none;
+                display: flex;
+                align-items: center;
+                gap: 4rem;
+
+                span {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px
+                }
+            }
+
             span {
                 display: flex;
                 align-items: center;
@@ -32,6 +50,10 @@
         .email-count {
             color: $primary-green;
             font-weight: bold;
+
+            &--trash {
+                color: $secondary-grey;
+            }
         }
     }
 }

@@ -11,8 +11,8 @@ const Sidebar = () => {
   return (
     <div className='sidebar'>
         <div className="sidebar__menu">
-            <button><span><HiOutlineMail/>Inbox</span><span className='email-count'>{emails.length}</span></button><br/>
-            <button><span><HiOutlineTrash/>Trash</span><span className='email-count'>{trash.length}</span></button>
+            <button className='sidebar__menu__btn'><span><HiOutlineMail/>Inbox</span><span className='email-count'>{emails.length}</span></button><br/>
+            <button className='sidebar__menu__btn--trash'><span><HiOutlineTrash/>Trash</span><span className='email-count--trash'>{trash.length}</span></button>
         </div>
     </div>
   )
