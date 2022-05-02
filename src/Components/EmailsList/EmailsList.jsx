@@ -1,15 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { EmailsContext } from '../../Context/EmailsContext'
 import './EmailsList.scss'
 
 const EmailsList = (props) => {
 
+    const {setEmailData} = useContext(EmailsContext)
     const [isRead, setIsRead] = useState(false)
 
     const { 
         id, 
         username, 
         date, 
-        email, 
+        emailAddress, 
         emailSubject, 
         emailType, 
         importance, 
@@ -17,11 +19,10 @@ const EmailsList = (props) => {
         emailBody2, 
         emailBody3, 
         emailSignature, 
-        setEmailData 
     } = props
 
     const passEmailData = () => {
-        setEmailData(props)
+        setEmailData([props])
         setIsRead(!isRead)
     }
 
