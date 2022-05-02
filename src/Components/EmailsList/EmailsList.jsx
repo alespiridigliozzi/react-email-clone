@@ -1,11 +1,10 @@
 import React, { useState, useContext } from 'react'
-import { useEffect } from 'react'
 import { EmailsContext } from '../../Context/EmailsContext'
 import './EmailsList.scss'
 
 const EmailsList = (props) => {
 
-    const {emailData, setEmailData} = useContext(EmailsContext)
+    const {setEmailData} = useContext(EmailsContext)
     const [isRead, setIsRead] = useState(false)
 
     const { 

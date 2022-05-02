@@ -6,9 +6,7 @@ import { HiOutlineTrash } from 'react-icons/hi'
 
 const Sidebar = () => {
 
-    const {emails, emailData, trash} = useContext(EmailsContext)
-
-    console.log("trash:" + trash)
+    const {emails, trash} = useContext(EmailsContext)
 
   return (
     <div className='sidebar'>

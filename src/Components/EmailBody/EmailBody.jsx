@@ -7,16 +7,13 @@ import { HiDotsHorizontal } from 'react-icons/hi'
 
 const EmailBody = () => {
 
-    const {emails, setEmails, emailData, setEmailData, trash, setTrash} = useContext(EmailsContext)
-
-    console.log(`email data:` + emailData)
+    const {emails, setEmails, emailData, setEmailData} = useContext(EmailsContext)
 
     const deleteEmail = (id) => {
-        const delEm = emails.filter(email => email.id !== id)
-        const propsObj = emailData.filter(item => item.id !== id)
-        setEmails(delEm)
+        const deletedEmail = emails.filter(email => email.id !== id)
+        const propsObj = emailData.filter(email => email.id !== id)
+        setEmails(deletedEmail)
         setEmailData(propsObj)
-        console.log(propsObj)
     }
 
     return (

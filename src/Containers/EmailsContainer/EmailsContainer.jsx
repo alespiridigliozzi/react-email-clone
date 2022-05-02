@@ -7,7 +7,7 @@ import EmailFilters from '../../Components/EmailFilters/EmailFilters'
 
 const EmailsContainer = () => {
 
-    const {emails, setEmails, emailData, setEmailData} = useContext(EmailsContext)
+    const {emails, emailData, setEmailData} = useContext(EmailsContext)
     
     const [highImportance, setHighImportance] = useState(false)
     const [mediumImportance, setMediumImportance] = useState(false)
@@ -45,21 +45,21 @@ const EmailsContainer = () => {
         setTypeWork(!typeWork)
     }
 
-    const emailsResults = emails.map(em => {
+    const emailsResults = emails.map(email => {
         return (
             <EmailsList 
-            key={em.id} 
-            id={em.id}
-            username={em.userName} 
-            emailAddress={em.email_address}
-            date={em.date}
-            emailType={em.email_type}
-            emailSubject={em.email_subject}
-            emailBody1={em.email_body1}
-            emailBody2={em.email_body2}
-            emailBody3={em.email_body3}
-            emailSignature={em.email_signature}
-            importance={em.importance}
+            key={email.id} 
+            id={email.id}
+            username={email.userName} 
+            emailAddress={email.email_address}
+            date={email.date}
+            emailType={email.email_type}
+            emailSubject={email.email_subject}
+            emailBody1={email.email_body1}
+            emailBody2={email.email_body2}
+            emailBody3={email.email_body3}
+            emailSignature={email.email_signature}
+            importance={email.importance}
             setEmailData={setEmailData}
             />
         )
@@ -123,8 +123,8 @@ const EmailsContainer = () => {
                 </div>
             </div>
 
-            <div className="emails-container__email-body">
-                {emailData.length > 0 ? <EmailBody /> : <span>"Please select an email to read."</span> }
+            <div className={`emails-container${emailData.length > 0 ? "__email-body" : "__empty-body"}`}>
+                {emailData.length > 0 ? <EmailBody /> : <h4>Please select an email to read.</h4> }
             </div>
         </>
     )
