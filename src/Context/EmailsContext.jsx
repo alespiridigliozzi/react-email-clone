@@ -7,17 +7,17 @@ export const EmailsContext = createContext();
 
 export const EmailsProvider = ({ children }) => {
 
-    const [emails, setEmails] = useState([])
-    const [emailData, setEmailData] = useState([])
-    const [trash, setTrash] = useState([])
+  const [emails, setEmails] = useState([])
+  const [emailData, setEmailData] = useState([])
+  const [trash, setTrash] = useState([])
 
-    useEffect(() => {
-        setEmails(data)
-    }, [])
+  useEffect(() => {
+    setEmails(data)
+  }, [])
 
-    return (
-        <EmailsContext.Provider value={{emails, setEmails, emailData, setEmailData, trash, setTrash}}>
-            {children}
-        </EmailsContext.Provider>
-    )
+  return (
+    <EmailsContext.Provider value={{emails, setEmails, emailData, setEmailData, trash, setTrash}}>
+      {children}
+    </EmailsContext.Provider>
+  )
 }
