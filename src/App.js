@@ -8,13 +8,13 @@ import {data} from './data/data'
 function App() {
   return (
     <EmailsProvider>
-        <div className="App">
-        <Navbar />
-        <main className='main-container'>
-            <Sidebar />
-            <EmailsContainer />
-        </main>
-        </div>
+      <div className="App">
+      <Navbar />
+      <main className='main-container'>
+        <Sidebar />
+        <EmailsContainer />
+      </main>
+      </div>
     </EmailsProvider>
   );
 }
